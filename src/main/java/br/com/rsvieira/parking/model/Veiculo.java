@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -26,19 +28,28 @@ public class Veiculo {
 	@Column(name = "ID")
 	private Long id;
 
-	@Column(name = "MARCA_PK")
-	private String marca;
+	@OneToOne
+	@JoinColumn(name = "MARCA_FK")
+	@Getter
+	private Marca marca;
 
-	@Column(name = "MODELO_PK")
-	private String modelo;
+	@OneToOne
+	@JoinColumn(name = "MODELO_FK")
+	@Getter
+	private Modelo modelo;
 
-	@Column(name = "COR_PK")
-	private String cor;
+	@OneToOne
+	@JoinColumn(name = "COR_FK")
+	@Getter
+	private Cor cor;
 
 	@Column(name = "PLACA")
+	@Getter
 	private String placa;
 
-	@Column(name = "TIPO_CARRO_PK")
-	private String tipo;
+	@OneToOne
+	@JoinColumn(name = "TIPO_CARRO_FK")
+	@Getter
+	private TipoCarro tipo;
 
 }
