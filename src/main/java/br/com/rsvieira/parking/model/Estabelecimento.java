@@ -21,6 +21,6 @@ public class Estabelecimento {
 	private String endereço;
 	private String telefone;
 	private Integer quantidadeVagaMoto;
-	private Integer QuantidadeVagaCarro;
+	private Integer quantidadeVagaCarro;
 
 }
