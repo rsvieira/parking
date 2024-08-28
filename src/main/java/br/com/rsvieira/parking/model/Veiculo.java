@@ -12,6 +12,7 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 @Entity
@@ -30,26 +31,32 @@ public class Veiculo {
 
 	@OneToOne
 	@JoinColumn(name = "MARCA_FK")
-	@Getter
+	@Getter @Setter
 	private Marca marca;
 
 	@OneToOne
 	@JoinColumn(name = "MODELO_FK")
-	@Getter
+	@Getter @Setter
 	private Modelo modelo;
 
 	@OneToOne
 	@JoinColumn(name = "COR_FK")
-	@Getter
+	@Getter @Setter
 	private Cor cor;
 
 	@Column(name = "PLACA")
-	@Getter
+	@Getter @Setter
 	private String placa;
 
 	@OneToOne
 	@JoinColumn(name = "TIPO_CARRO_FK")
-	@Getter
+	@Getter @Setter
 	private TipoCarro tipo;
+
+	@OneToOne
+	@JoinColumn(name = "ESTABELECIMENTO_FK")
+	@Getter @Setter
+	private Estabelecimento estabelecimento;
+
 
 }
